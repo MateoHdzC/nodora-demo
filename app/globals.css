@@ -1,0 +1,239 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ───────────── Tokens de Nodora (DESIGN.md) ───────────── */
+
+:root {
+  --fondo: #faf8f5;
+  --superficie: #ffffff;
+  --superficie-2: #f3f0eb;
+  --borde: #e7e2da;
+  --borde-fuerte: #d6cfc4;
+  --texto: #1c1410;
+  --texto-suave: #6b625a;
+  --acento: #ff6b4a;
+  --acento-2: #ffb547;
+  --acento-texto: #c2461f;
+  --tinta: #1c1410; /* texto sobre naranja, siempre oscuro */
+
+  --exito: #3f9a6b;
+  --alerta: #d99a2b;
+  --error: #d2553f;
+  --info: var(--texto-suave);
+
+  /* Variables que esperan los componentes de shadcn, apuntando a los nuestros */
+  --background: var(--fondo);
+  --foreground: var(--texto);
+  --card: var(--superficie);
+  --card-foreground: var(--texto);
+  --popover: var(--superficie);
+  --popover-foreground: var(--texto);
+  --primary: var(--acento);
+  --primary-foreground: var(--tinta);
+  --secondary: var(--superficie-2);
+  --secondary-foreground: var(--texto);
+  --muted: var(--superficie-2);
+  --muted-foreground: var(--texto-suave);
+  --accent: var(--superficie-2);
+  --accent-foreground: var(--texto);
+  --destructive: var(--error);
+  --border: var(--borde);
+  --input: var(--borde);
+  --ring: var(--acento);
+  --chart-1: var(--acento);
+  --chart-2: var(--acento-2);
+  --chart-3: var(--exito);
+  --chart-4: var(--alerta);
+  --chart-5: var(--texto-suave);
+  --radius: 0.5rem;
+  --sidebar: var(--superficie);
+  --sidebar-foreground: var(--texto);
+  --sidebar-primary: var(--acento);
+  --sidebar-primary-foreground: var(--tinta);
+  --sidebar-accent: var(--superficie-2);
+  --sidebar-accent-foreground: var(--texto);
+  --sidebar-border: var(--borde);
+  --sidebar-ring: var(--acento);
+}
+
+.dark {
+  --fondo: #141210;
+  --superficie: #1c1916;
+  --superficie-2: #24201c;
+  --borde: #2e2924;
+  --borde-fuerte: #453e36;
+  --texto: #f5f1ec;
+  --texto-suave: #a39a90;
+  --acento-texto: #ff8a6b;
+}
+
+@theme inline {
+  /* Colores propios: bg-fondo, text-texto-suave, border-borde, etc. */
+  --color-fondo: var(--fondo);
+  --color-superficie: var(--superficie);
+  --color-superficie-2: var(--superficie-2);
+  --color-borde: var(--borde);
+  --color-borde-fuerte: var(--borde-fuerte);
+  --color-texto: var(--texto);
+  --color-texto-suave: var(--texto-suave);
+  --color-acento: var(--acento);
+  --color-acento-2: var(--acento-2);
+  --color-acento-texto: var(--acento-texto);
+  --color-tinta: var(--tinta);
+  --color-exito: var(--exito);
+  --color-alerta: var(--alerta);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Mapeo de shadcn */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Tipografía: Geist alojada en el sitio (paquete geist) */
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-heading: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Escala de texto: 12 / 14 / 16 / 20 / 24 / 32 / 48 / 64 */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 1.2;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.1;
+  --text-5xl--letter-spacing: -0.025em;
+  --text-6xl: 4rem;
+  --text-6xl--line-height: 1.1;
+  --text-6xl--letter-spacing: -0.03em;
+
+  /* Esquinas: 8 botones e inputs, 12 cards, 16 modales y capturas */
+  --radius-boton: 0.5rem;
+  --radius-card: 0.75rem;
+  --radius-modal: 1rem;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+
+  /* Movimiento (los mismos valores que lib/movimiento.ts) */
+  --ease-nodora: cubic-bezier(0.22, 1, 0.36, 1);
+  --duracion-hover: 150ms;
+  --duracion-ui: 250ms;
+
+  --animate-latido: latido 2.4s var(--ease-nodora) infinite;
+  @keyframes latido {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--acento) 45%, transparent);
+    }
+    50% {
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--acento) 0%, transparent);
+    }
+  }
+}
+
+/* ───────────── Utilidades ───────────── */
+
+/* Degradado de marca: naranja → ámbar */
+@utility degradado-marca {
+  background-image: linear-gradient(135deg, var(--acento), var(--acento-2));
+}
+
+/* Texto con degradado (sigue siendo texto normal para lectores de pantalla) */
+@utility texto-degradado {
+  background-image: linear-gradient(135deg, var(--acento), var(--acento-2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Cifras tabulares para montos, métricas, fechas y tablas */
+@utility cifras {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Titulares: interlineado corto y letter-spacing apenas negativo */
+@utility titular {
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* ───────────── Base ───────────── */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-fondo text-texto;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  /* Foco visible: anillo naranja en todo lo navegable con teclado */
+  :focus-visible {
+    outline: 2px solid var(--acento);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--acento) 30%, transparent);
+  }
+}
+
+/* Reducir movimiento: solo quedan los fades */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

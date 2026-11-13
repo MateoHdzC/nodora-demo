@@ -1,0 +1,97 @@
+{
+  "comun": {
+    "modo": {
+      "cambiar": "Cambiar modo de color",
+      "aOscuro": "Activar modo oscuro",
+      "aClaro": "Activar modo claro"
+    },
+    "idioma": {
+      "otro": "EN",
+      "irAlOtro": "Ver en inglés"
+    },
+    "saltarAlContenido": "Saltar al contenido"
+  },
+  "inicio": {
+    "titulo": "Nodora",
+    "descripcion": "El portal de clientes para agencias y freelancers.",
+    "proximamente": "La demo está en construcción. Mientras tanto, mirá el sistema visual.",
+    "verKit": "Ver el UI kit"
+  },
+  "kit": {
+    "titulo": "UI kit",
+    "metaTitulo": "UI kit · Nodora",
+    "descripcion": "Todas las piezas con las que se arma Nodora, en claro y en oscuro.",
+    "secciones": {
+      "colores": "Colores",
+      "tipografia": "Tipografía",
+      "botones": "Botones",
+      "estados": "Badges de estado",
+      "cards": "Cards",
+      "ia": "Card de IA",
+      "avance": "Línea de avance",
+      "logo": "Logo"
+    },
+    "botones": {
+      "principal": "Crear proyecto",
+      "secundario": "Ver demo",
+      "terciario": "Cancelar",
+      "conIcono": "Subir entrega",
+      "deshabilitado": "Aprobar",
+      "chico": "Chico",
+      "grande": "Empezar gratis"
+    },
+    "tipografia": {
+      "titular": "Tus clientes, <destacado>al día</destacado>.",
+      "cuerpo": "Mostrá el avance, recibí aprobaciones y cobrá sin perseguir a nadie por WhatsApp.",
+      "suave": "Texto secundario para detalles y ayudas.",
+      "link": "Un link de ejemplo",
+      "cifras": "Montos con cifras tabulares"
+    },
+    "cards": {
+      "estatica": "Card estática",
+      "estaticaTexto": "Borde de 1 px, sin sombra y esquinas de 12 px.",
+      "interactiva": "Web Panadería Sol",
+      "interactivaTexto": "Pasá el puntero: el borde cambia apenas.",
+      "cliente": "Panadería Sol"
+    },
+    "ia": {
+      "titulo": "Resumen de la semana",
+      "texto": "El proyecto avanzó a Revisión. Panadería Sol tiene una entrega esperando su aprobación desde hace 2 días: un recordatorio amable mañana a la mañana suele funcionar.",
+      "pie": "Generado por la IA de Nodora"
+    },
+    "avance": {
+      "enRevision": "Proyecto en revisión",
+      "recienEmpieza": "Recién empieza",
+      "terminado": "Entregado"
+    },
+    "logo": {
+      "animado": "Animado (una sola vez)",
+      "estatico": "Estático",
+      "repetir": "Ver de nuevo"
+    }
+  },
+  "estados": {
+    "borrador": "Borrador",
+    "enCurso": "En curso",
+    "esperandoCliente": "Esperando cliente",
+    "entregado": "Entregado",
+    "pausado": "Pausado"
+  },
+  "avance": {
+    "etiqueta": "Avance del proyecto",
+    "etapas": {
+      "diseno": "Diseño",
+      "desarrollo": "Desarrollo",
+      "revision": "Revisión",
+      "entrega": "Entrega"
+    },
+    "estadoEtapa": {
+      "hecha": "completada",
+      "actual": "etapa actual",
+      "pendiente": "pendiente"
+    }
+  },
+  "ia": {
+    "etiqueta": "Sugerencia de IA"
+  }
+}

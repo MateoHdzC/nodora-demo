@@ -1,0 +1,6 @@
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
+  # Los trae next-intl para extraer textos (no lo usamos); ya vienen precompilados
+  "@parcel/watcher": false
+  "@swc/core": false
