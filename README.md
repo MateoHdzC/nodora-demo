@@ -2,6 +2,8 @@
 
 UI kit y demo navegable de **Nodora**, el portal de clientes para agencias y freelancers de LatAm. Es solo frontend, con datos falsos, y se publica como sitio estático en GitHub Pages.
 
+**Demo:** https://mateohdzc.github.io/nodora-demo/ · **UI kit:** https://mateohdzc.github.io/nodora-demo/kit/
+
 ## Correrlo
 
 Requisitos: Node 24 (ver `.nvmrc`) y pnpm.
@@ -31,6 +33,8 @@ $env:NEXT_PUBLIC_BASE_PATH = '/nodora-demo'; pnpm build
 # Linux / CI (en Git Bash no: convierte "/nodora-demo" en una ruta de Windows)
 NEXT_PUBLIC_BASE_PATH=/nodora-demo pnpm build
 ```
+
+En cada push a `main`, `.github/workflows/pages.yml` hace lint, el build y lo publica solo.
 
 El resultado queda en `out/`. Para probarlo local, copiá `out/` a una carpeta llamada `nodora-demo` y serví la carpeta de arriba con `python -m http.server`.
 
