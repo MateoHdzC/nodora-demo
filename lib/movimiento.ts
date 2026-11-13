@@ -11,18 +11,6 @@ export const duracion = {
   destacado: 0.8, // momentos "uff": logo, nodos que se conectan
 } as const;
 
-/**
- * Con movimiento reducido, todo pasa al instante salvo la opacidad (un fade corto).
- * Se cambia la transición y no el estado inicial: el HTML estático no sabe la
- * preferencia del usuario, y si el estado inicial cambiara habría diferencias
- * de hidratación.
- */
-export function transicion<T extends object>(sinMovimiento: boolean | null, normal: T) {
-  return sinMovimiento
-    ? { default: { duration: 0 }, opacity: { duration: duracion.ui, ease: curva } }
-    : normal;
-}
-
 /** Entrada estándar de listas y cards: fade + sube 8 px */
 export const entrada = {
   initial: { opacity: 0, y: 8 },

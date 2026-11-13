@@ -227,6 +227,138 @@
   }
 }
 
+/* ───────────── Fondo ambiente (solo Inicio y login) ───────────── */
+
+:root {
+  /* Medido: con 0.30 el subtítulo bajaba a 4.37:1 en el peor punto */
+  --aurora-opacidad: 0.22;
+  --grano-opacidad: 0.05;
+}
+.dark {
+  --aurora-opacidad: 0.22;
+  --grano-opacidad: 0.07;
+}
+
+/* Manchas de luz muy difusas que "respiran" lento. Es CSS puro: se ve sin JavaScript */
+.aurora-mancha {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: var(--aurora-opacidad);
+  will-change: transform;
+}
+.aurora-mancha:nth-child(1) {
+  animation: respirar-1 26s var(--ease-nodora) infinite;
+}
+.aurora-mancha:nth-child(2) {
+  animation: respirar-2 32s var(--ease-nodora) infinite;
+}
+.aurora-mancha:nth-child(3) {
+  animation: respirar-3 22s var(--ease-nodora) infinite;
+}
+@keyframes respirar-1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(8%, 6%, 0) scale(1.15); }
+}
+@keyframes respirar-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.1); }
+  50% { transform: translate3d(-10%, 4%, 0) scale(0.95); }
+}
+@keyframes respirar-3 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(0.9); }
+  50% { transform: translate3d(6%, -8%, 0) scale(1.1); }
+}
+
+/* Grano: ruido SVG muy leve encima de todo el fondo */
+.grano {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23r)'/%3E%3C/svg%3E");
+  opacity: var(--grano-opacidad);
+  mix-blend-mode: overlay;
+}
+
+/* ───────────── Entradas ───────────── */
+
+/* Al cargar (hero): CSS con tiempo, no depende de JavaScript */
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes entrar-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.entrada {
+  animation: entrar 600ms var(--ease-nodora) both;
+  animation-delay: calc(var(--orden, 0) * 80ms);
+}
+
+/* Al bajar: atada al scroll (scroll-driven). Donde no se soporta, se ve directo */
+@supports (animation-timeline: view()) {
+  .revelar {
+    animation: entrar linear both;
+    animation-timeline: view();
+    animation-range: entry calc(var(--orden, 0) * 8%) entry calc(70% + var(--orden, 0) * 8%);
+  }
+}
+
+/* ───────────── Nodos que se conectan (logo y línea de avance) ─────────────
+   CSS y no Motion: el HTML estático ya trae el estado final, así que sin
+   JavaScript se ve igual y no hay diferencias de hidratación. */
+
+/* Un nodo que aparece creciendo desde su centro */
+.nodo-aparece {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nodo-aparece 280ms var(--ease-nodora) both;
+  animation-delay: var(--retraso, 0ms);
+}
+@keyframes nodo-aparece {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: none; }
+}
+
+/* El nodo de la etapa actual: aparece y después late (dos animaciones juntas) */
+.nodo-aparece.animate-latido {
+  animation:
+    nodo-aparece 280ms var(--ease-nodora) both,
+    latido 2.4s var(--ease-nodora) infinite;
+  animation-delay: var(--retraso, 0ms), calc(var(--retraso, 0ms) + 280ms);
+}
+
+/* Una línea SVG que se dibuja (necesita pathLength="1") */
+.linea-dibuja {
+  stroke-dasharray: 1;
+  animation: linea-dibuja 360ms var(--ease-nodora) both;
+  animation-delay: var(--retraso, 0ms);
+}
+@keyframes linea-dibuja {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Un tramo HTML que se llena de izquierda a derecha */
+.tramo-llena {
+  transform-origin: left;
+  animation: tramo-llena 480ms var(--ease-nodora) both;
+  animation-delay: var(--retraso, 0ms);
+}
+@keyframes tramo-llena {
+  from { transform: scaleX(0); }
+  to { transform: none; }
+}
+
+/* Con movimiento reducido: aurora quieta y entradas solo con fade */
+@media (prefers-reduced-motion: reduce) {
+  .entrada,
+  .revelar {
+    animation-name: entrar-fade;
+  }
+  /* Mismo selector que arriba, para ganarle en especificidad */
+  .aurora-mancha:nth-child(n) {
+    animation: none;
+  }
+}
+
 /* Reducir movimiento: solo quedan los fades */
 @media (prefers-reduced-motion: reduce) {
   *,

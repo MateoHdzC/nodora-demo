@@ -15,10 +15,22 @@ pnpm dev        # http://localhost:3100
 
 El puerto es el 3100 porque el 3000 suele estar ocupado.
 
-| Ruta | Qué hay |
-|---|---|
-| `/` y `/en/` | Inicio provisorio (la landing viene después) |
-| `/kit/` y `/en/kit/` | Todos los componentes en sus variantes |
+| Página | Español | Inglés | Estado |
+|---|---|---|---|
+| Inicio | `/` | `/en/` | Lista |
+| Funciones | `/funciones/` | `/en/features/` | Próximamente |
+| Precios | `/precios/` | `/en/pricing/` | Próximamente |
+| Preguntas | `/preguntas/` | `/en/faq/` | Próximamente |
+| Lista de espera | `/lista-de-espera/` | `/en/waitlist/` | Próximamente |
+| Demo | `/demo/` | `/en/demo/` | Próximamente |
+| UI kit | `/kit/` | `/en/kit/` | Lista |
+
+### Agregar o completar una página
+
+1. Si es nueva, sumala a `i18n/rutas.ts` con su ruta en cada idioma. El botón de idioma y la barra la toman de ahí.
+2. Creá la pantalla en `pantallas/` (por ejemplo `PaginaPrecios.tsx`) con `<Barra />`, el contenido y `<Pie />`.
+3. En los dos envoltorios (`app/(es)/precios/page.tsx` y `app/(en)/en/pricing/page.tsx`) cambiá `PaginaProximamente` por la pantalla nueva.
+4. Los textos van en `mensajes/es.json` y `en.json`, en español neutro y tuteando.
 
 ## Build para GitHub Pages
 
@@ -44,7 +56,8 @@ El resultado queda en `out/`. Para probarlo local, copiá `out/` a una carpeta l
 
 - **Idiomas sin middleware:** el export estático no tiene servidor, así que hay dos layouts raíz, `app/(es)` (español, sin prefijo) y `app/(en)/en` (inglés). Cada `page.tsx` es un envoltorio de una línea y la pantalla real vive en `pantallas/`. Los textos están en `mensajes/es.json` y `en.json`.
 - **Tokens:** en `app/globals.css`, con los valores de DESIGN.md para claro (`:root`) y oscuro (`.dark`). Se usan como clases (`bg-fondo`, `text-texto-suave`, `border-borde`, `rounded-card`) y las variables de shadcn apuntan a los mismos tokens.
-- **Movimiento:** duraciones y curva en `lib/movimiento.ts`. Con "reducir movimiento" solo quedan los fades. Se cambia la transición y no el estado inicial, para no generar diferencias de hidratación.
+- **Animaciones en CSS:** las entradas, el logo y la línea de nodos son CSS (`globals.css`), no Motion. El HTML estático ya trae el estado final, así que sin JavaScript se ve todo y no hay diferencias de hidratación. Las entradas al bajar usan scroll-driven animations (`.revelar`). Con "reducir movimiento" solo quedan los fades.
+- **Fondo ambiente** (solo en el Inicio): la aurora es CSS, la red de nodos es Canvas (`components/sitio/fondo-nodos.tsx`, que se pausa fuera de pantalla y con la pestaña oculta) y encima va un grano SVG. La aurora en claro va con opacidad 0.22, porque con 0.30 el subtítulo bajaba a 4.37:1. La red se desvanece detrás del texto.
 - **404:** `app/global-not-found.tsx` (experimental en Next 16), porque hay dos layouts raíz.
 
 ## Contraste (WCAG AA, mínimo 4.5:1)

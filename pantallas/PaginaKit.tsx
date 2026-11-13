@@ -3,7 +3,8 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { ArrowRight, Upload } from "lucide-react";
 import type { Idioma } from "@/i18n/config";
-import { Encabezado } from "@/components/encabezado";
+import { Barra } from "@/components/sitio/barra";
+import { Pie } from "@/components/sitio/pie";
 import { Boton } from "@/components/ui/boton";
 import { BadgeEstado, estadosProyecto } from "@/components/ui/badge-estado";
 import { Card, CardTexto, CardTitulo } from "@/components/ui/card";
@@ -49,7 +50,7 @@ export function PaginaKit() {
 
   return (
     <>
-      <Encabezado />
+      <Barra />
       <main id="contenido" className="mx-auto max-w-7xl px-4 pb-24 sm:px-6">
         <div className="py-16">
           <h1 className="titular text-5xl font-semibold">{t("titulo")}</h1>
@@ -178,6 +179,7 @@ export function PaginaKit() {
           </div>
         </Seccion>
       </main>
+      <Pie />
     </>
   );
 }

@@ -11,11 +11,120 @@
     },
     "saltarAlContenido": "Saltar al contenido"
   },
-  "inicio": {
+  "meta": {
     "titulo": "Nodora",
-    "descripcion": "El portal de clientes para agencias y freelancers.",
-    "proximamente": "La demo está en construcción. Mientras tanto, mirá el sistema visual.",
-    "verKit": "Ver el UI kit"
+    "descripcion": "El portal de clientes para agencias y freelancers de LatAm: avance, aprobaciones, archivos y cobros en un solo lugar."
+  },
+  "sitio": {
+    "nav": {
+      "inicio": "Inicio",
+      "funciones": "Funciones",
+      "precios": "Precios",
+      "preguntas": "Preguntas",
+      "listaEspera": "Lista de espera",
+      "demo": "Demo",
+      "kit": "UI kit"
+    },
+    "navegacion": "Navegación principal",
+    "probarDemo": "Probar la demo",
+    "menu": {
+      "abrir": "Abrir menú",
+      "cerrar": "Cerrar menú",
+      "titulo": "Menú"
+    },
+    "pie": {
+      "lema": "El portal de clientes para agencias y freelancers.",
+      "producto": "Producto",
+      "recursos": "Recursos",
+      "aclaracion": "Esto es una demo: todos los datos son falsos y no se guarda nada.",
+      "hecho": "Hecho por Mateo con Claude"
+    }
+  },
+  "paginas": {
+    "funciones": "Funciones",
+    "precios": "Precios",
+    "preguntas": "Preguntas frecuentes",
+    "listaEspera": "Lista de espera",
+    "demo": "Demo"
+  },
+  "proximamente": {
+    "etiqueta": "Próximamente",
+    "volver": "Volver al inicio",
+    "anotarme": "Unirme a la lista",
+    "textos": {
+      "funciones": "Aquí vas a ver cada función de Nodora explicada, con su vista previa: portal del cliente, aprobaciones, archivos, cobros e IA.",
+      "precios": "Aquí vas a ver los 6 planes, del Gratis al Enterprise, con el cambio entre mensual y anual.",
+      "preguntas": "Aquí van las dudas más comunes: cómo se cobra, qué ve tu cliente, qué pasa con tus archivos y más.",
+      "listaEspera": "Aquí vas a poder dejar tu email para enterarte cuando Nodora abra.",
+      "demo": "Aquí vas a poder recorrer el panel de la agencia y el portal del cliente, con datos de ejemplo."
+    }
+  },
+  "inicio": {
+    "hero": {
+      "etiqueta": "Para agencias y freelancers de LatAm",
+      "titular": "Tus clientes, <destacado>al día</destacado>, sin perseguir a nadie.",
+      "subtitulo": "Un portal con tu marca donde cada cliente ve el avance, aprueba entregas y paga. Y tú dejas de mandar audios explicando cómo va todo.",
+      "probar": "Probar la demo",
+      "unirme": "Unirme a la lista"
+    },
+    "maqueta": {
+      "descripcion": "Vista previa del panel de Nodora: métricas, proyectos con su avance y un resumen de la IA.",
+      "saludo": "Buen día, Mateo",
+      "fecha": "Jueves 12 de noviembre",
+      "metricas": {
+        "activos": "Proyectos activos",
+        "porAprobar": "Por aprobar",
+        "aCobrar": "A cobrar",
+        "clientes": "Clientes"
+      },
+      "proyectos": "Proyectos",
+      "verTodos": "Ver todos",
+      "ia": {
+        "titulo": "Esta semana",
+        "texto": "Panadería Sol tiene una entrega esperando hace 2 días. Un recordatorio mañana a la mañana suele funcionar."
+      },
+      "nav": {
+        "inicio": "Inicio",
+        "proyectos": "Proyectos",
+        "clientes": "Clientes",
+        "facturas": "Facturas"
+      },
+      "datos": {
+        "p1": {
+          "nombre": "Web Panadería Sol",
+          "cliente": "Panadería Sol"
+        },
+        "p2": {
+          "nombre": "Identidad Café Brote",
+          "cliente": "Café Brote"
+        },
+        "p3": {
+          "nombre": "Tienda Huerta Viva",
+          "cliente": "Huerta Viva"
+        }
+      }
+    },
+    "funciones": {
+      "titulo": "Todo lo que tu cliente necesita, en un solo link",
+      "subtitulo": "Sin cuentas raras ni capacitaciones: tu cliente entra y entiende.",
+      "portal": {
+        "titulo": "Portal del cliente",
+        "texto": "Cada cliente ve sus proyectos, en qué etapa están y qué le toca hacer, con tu logo y tus colores."
+      },
+      "aprobaciones": {
+        "titulo": "Aprobaciones con historial",
+        "texto": "Aprueba o pide cambios con un clic. Queda todo registrado: quién, cuándo y sobre qué versión."
+      },
+      "ia": {
+        "titulo": "IA que avisa",
+        "texto": "Resume el avance de la semana y te avisa cuando un proyecto se traba, antes de que se enfríe."
+      },
+      "verTodas": "Ver todas las funciones"
+    },
+    "final": {
+      "titulo": "Pruébalo antes de que abra",
+      "texto": "Recorre la demo con datos de ejemplo o anótate para enterarte primero."
+    }
   },
   "kit": {
     "titulo": "UI kit",
@@ -42,7 +151,7 @@
     },
     "tipografia": {
       "titular": "Tus clientes, <destacado>al día</destacado>.",
-      "cuerpo": "Mostrá el avance, recibí aprobaciones y cobrá sin perseguir a nadie por WhatsApp.",
+      "cuerpo": "Muestra el avance, recibe aprobaciones y cobra sin perseguir a nadie por WhatsApp.",
       "suave": "Texto secundario para detalles y ayudas.",
       "link": "Un link de ejemplo",
       "cifras": "Montos con cifras tabulares"
@@ -51,7 +160,7 @@
       "estatica": "Card estática",
       "estaticaTexto": "Borde de 1 px, sin sombra y esquinas de 12 px.",
       "interactiva": "Web Panadería Sol",
-      "interactivaTexto": "Pasá el puntero: el borde cambia apenas.",
+      "interactivaTexto": "Pasa el puntero: el borde cambia apenas.",
       "cliente": "Panadería Sol"
     },
     "ia": {

@@ -11,11 +11,120 @@
     },
     "saltarAlContenido": "Skip to content"
   },
-  "inicio": {
+  "meta": {
     "titulo": "Nodora",
-    "descripcion": "The client portal for agencies and freelancers.",
-    "proximamente": "The demo is under construction. In the meantime, take a look at the design system.",
-    "verKit": "View the UI kit"
+    "descripcion": "The client portal for agencies and freelancers in LatAm: progress, approvals, files and payments in one place."
+  },
+  "sitio": {
+    "nav": {
+      "inicio": "Home",
+      "funciones": "Features",
+      "precios": "Pricing",
+      "preguntas": "FAQ",
+      "listaEspera": "Waitlist",
+      "demo": "Demo",
+      "kit": "UI kit"
+    },
+    "navegacion": "Main navigation",
+    "probarDemo": "Try the demo",
+    "menu": {
+      "abrir": "Open menu",
+      "cerrar": "Close menu",
+      "titulo": "Menu"
+    },
+    "pie": {
+      "lema": "The client portal for agencies and freelancers.",
+      "producto": "Product",
+      "recursos": "Resources",
+      "aclaracion": "This is a demo: all data is fake and nothing is saved.",
+      "hecho": "Made by Mateo with Claude"
+    }
+  },
+  "paginas": {
+    "funciones": "Features",
+    "precios": "Pricing",
+    "preguntas": "FAQ",
+    "listaEspera": "Waitlist",
+    "demo": "Demo"
+  },
+  "proximamente": {
+    "etiqueta": "Coming soon",
+    "volver": "Back to home",
+    "anotarme": "Join the waitlist",
+    "textos": {
+      "funciones": "Here you'll see every Nodora feature explained, with a preview: client portal, approvals, files, payments and AI.",
+      "precios": "Here you'll see all 6 plans, from Free to Enterprise, with a monthly and yearly switch.",
+      "preguntas": "The most common questions go here: billing, what your client sees, what happens to your files and more.",
+      "listaEspera": "Here you'll be able to leave your email to hear when Nodora opens.",
+      "demo": "Here you'll be able to explore the agency dashboard and the client portal, with sample data."
+    }
+  },
+  "inicio": {
+    "hero": {
+      "etiqueta": "For agencies and freelancers in LatAm",
+      "titular": "Your clients, <destacado>up to date</destacado>, without chasing anyone.",
+      "subtitulo": "A branded portal where each client sees progress, approves deliveries and pays. You stop sending voice notes explaining where everything stands.",
+      "probar": "Try the demo",
+      "unirme": "Join the waitlist"
+    },
+    "maqueta": {
+      "descripcion": "Preview of the Nodora dashboard: metrics, projects with their progress and an AI summary.",
+      "saludo": "Good morning, Mateo",
+      "fecha": "Thursday, November 12",
+      "metricas": {
+        "activos": "Active projects",
+        "porAprobar": "To approve",
+        "aCobrar": "To collect",
+        "clientes": "Clients"
+      },
+      "proyectos": "Projects",
+      "verTodos": "View all",
+      "ia": {
+        "titulo": "This week",
+        "texto": "Sol Bakery has had a delivery waiting for 2 days. A reminder tomorrow morning usually works."
+      },
+      "nav": {
+        "inicio": "Home",
+        "proyectos": "Projects",
+        "clientes": "Clients",
+        "facturas": "Invoices"
+      },
+      "datos": {
+        "p1": {
+          "nombre": "Sol Bakery website",
+          "cliente": "Sol Bakery"
+        },
+        "p2": {
+          "nombre": "Brote Café branding",
+          "cliente": "Brote Café"
+        },
+        "p3": {
+          "nombre": "Huerta Viva store",
+          "cliente": "Huerta Viva"
+        }
+      }
+    },
+    "funciones": {
+      "titulo": "Everything your client needs, in one link",
+      "subtitulo": "No weird accounts or training: your client logs in and gets it.",
+      "portal": {
+        "titulo": "Client portal",
+        "texto": "Each client sees their projects, what stage they're in and what they need to do, with your logo and colors."
+      },
+      "aprobaciones": {
+        "titulo": "Approvals with history",
+        "texto": "Approve or request changes in one click. Everything is logged: who, when and on which version."
+      },
+      "ia": {
+        "titulo": "AI that warns you",
+        "texto": "Summarizes the week's progress and warns you when a project stalls, before it goes cold."
+      },
+      "verTodas": "See all features"
+    },
+    "final": {
+      "titulo": "Try it before it opens",
+      "texto": "Explore the demo with sample data or join the list to hear first."
+    }
   },
   "kit": {
     "titulo": "UI kit",

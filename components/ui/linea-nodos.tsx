@@ -1,9 +1,8 @@
-"use client";
-
-import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { cn } from "cn";
-import { curva, duracion, transicion } from "@/lib/movimiento";
+
+// Las animaciones son CSS (ver .nodo-aparece y .tramo-llena en globals.css)
+const retraso = (ms: number) => ({ "--retraso": `${ms}ms` }) as React.CSSProperties;
 
 const etapasPorDefecto = ["diseno", "desarrollo", "revision", "entrega"] as const;
 
@@ -15,15 +14,17 @@ const etapasPorDefecto = ["diseno", "desarrollo", "revision", "entrega"] as cons
 export function LineaNodos({
   actual,
   etapas,
+  compacta = false,
   className,
 }: {
   actual: number;
+  /** Sin nombres visibles (siguen para lectores de pantalla), para filas de tablas */
+  compacta?: boolean;
   /** Nombres ya traducidos; si no se pasan, usa Diseño → Desarrollo → Revisión → Entrega */
   etapas?: string[];
   className?: string;
 }) {
   const t = useTranslations("avance");
-  const sinMovimiento = useReducedMotion();
   const nombres = etapas ?? etapasPorDefecto.map((e) => t(`etapas.${e}`));
 
   return (
@@ -50,43 +51,32 @@ export function LineaNodos({
                 className="absolute top-[7px] left-1/2 h-0.5 w-full overflow-hidden rounded-full bg-borde"
               >
                 {tramoLleno && (
-                  <motion.span
-                    className="degradado-marca absolute inset-0 origin-left"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={transicion(sinMovimiento, {
-                      duration: duracion.destacado * 0.6,
-                      delay: 0.15 + i * 0.22,
-                      ease: curva,
-                    })}
+                  <span
+                    className="tramo-llena degradado-marca absolute inset-0"
+                    style={retraso(150 + i * 220)}
                   />
                 )}
               </span>
             )}
 
-            <motion.span
+            <span
               aria-hidden
               className={cn(
-                "relative z-10 grid size-4 place-items-center rounded-full border-2",
+                "nodo-aparece relative z-10 grid size-4 place-items-center rounded-full border-2",
                 estado === "hecha" && "border-acento bg-acento",
                 estado === "actual" && "animate-latido border-acento bg-superficie",
                 estado === "pendiente" && "border-borde-fuerte bg-superficie"
               )}
-              initial={{ scale: 0.4, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={transicion(sinMovimiento, {
-                duration: duracion.ui,
-                delay: i * 0.22,
-                ease: curva,
-              })}
+              style={retraso(i * 220)}
             >
               {estado === "actual" && <span className="size-1.5 rounded-full bg-acento" />}
-            </motion.span>
+            </span>
 
             <span
               className={cn(
                 "mt-2 text-xs",
-                estado === "pendiente" ? "text-texto-suave" : "font-medium text-texto"
+                estado === "pendiente" ? "text-texto-suave" : "font-medium text-texto",
+                compacta && "sr-only"
               )}
             >
               {nombre}

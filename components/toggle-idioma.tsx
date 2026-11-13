@@ -4,20 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { botonVariantes } from "@/components/ui/boton";
-
-// Español vive sin prefijo (/kit/) e inglés bajo /en (/en/kit/).
-// usePathname ya devuelve la ruta sin el basePath de GitHub Pages.
-export function rutaEnOtroIdioma(ruta: string, actual: string) {
-  if (actual === "en") {
-    const sinPrefijo = ruta.replace(/^\/en(?=\/|$)/, "");
-    return sinPrefijo === "" ? "/" : sinPrefijo;
-  }
-  return ruta === "/" ? "/en/" : `/en${ruta}`;
-}
+import type { Idioma } from "@/i18n/config";
+import { rutaEnOtroIdioma } from "@/i18n/rutas";
 
 export function ToggleIdioma() {
   const t = useTranslations("comun.idioma");
-  const idioma = useLocale();
+  const idioma = useLocale() as Idioma;
+  // usePathname ya devuelve la ruta sin el basePath de GitHub Pages
   const ruta = usePathname();
   const otro = idioma === "en" ? "es" : "en";
 

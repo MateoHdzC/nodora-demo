@@ -4,7 +4,7 @@ import type { Idioma } from "@/i18n/config";
 
 // Metadata base de cada idioma (título y descripción del sitio)
 export async function metadataBase(idioma: Idioma): Promise<Metadata> {
-  const t = await getTranslations({ locale: idioma, namespace: "inicio" });
+  const t = await getTranslations({ locale: idioma, namespace: "meta" });
   return {
     title: { default: t("titulo"), template: "%s · Nodora" },
     description: t("descripcion"),
